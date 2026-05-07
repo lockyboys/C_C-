@@ -1,0 +1,24 @@
+//#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	int n;
+	int i;
+	int * score;
+	printf("�л��� �Է� : ");
+	scanf("%d",&n);
+	
+	score = (int *)malloc(n*sizeof(int));//->(int *) ����ȯ 
+	
+	printf("�л����� %d ���Դϴ�\n",n);
+	
+	for(i=0;i<n;i++){
+		
+		score[i]=i;
+		printf("%d\n",score[i]);
+	}
+	
+	free(score); 
+	
+	return 0;
+}

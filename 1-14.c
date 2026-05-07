@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+void main(){
+    int month;
+
+    printf("현재 월(1~12) : ");
+    scanf("%d", &month);
+
+    month = (--month + 1) % 12;
+    month++;
+    printf("다음 달은 %d월\n", month);
+}
