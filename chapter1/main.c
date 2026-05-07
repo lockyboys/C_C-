@@ -27,5 +27,7 @@ int main() {
 
     PrintStack("Pop 후 스택");
 
+    PrintStack("Pop 후 스택");
+
     return 0;
 }
