@@ -32,7 +32,7 @@ int ComparePriority(char op1, char op2) {
     
     return result;
 }
-void infix2Postfix(char infix[100], char postfix[100]) {
+void Infix2Postfix(char infix[100], char postfix[100]) {
     int idxIn = 0, idxPost = 0;
 
     while (infix[idxIn] != '\0') {
@@ -98,7 +98,7 @@ void main() {
     int result;
 
     printf("중위표기식 : %s\n", infix);
-    infix2Postfix(infix, postfix);
+    Infix2Postfix(infix, postfix);
     printf("중위표기식 : %s\n", postfix);
 
     result = CalcPostfix(postfix);
