@@ -104,4 +104,8 @@ void main() {
     result = CalcPostfix(postfix);
     printf("result=%d\n", result);
 
+    PrintStack("Pop 후 스택4");
+
+    PrintStack("Pop 후 스택4");
+
 }

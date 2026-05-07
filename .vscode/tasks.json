@@ -10,10 +10,10 @@
                 "-g",
                 "-finput-charset=UTF-8",
                 "-fexec-charset=UTF-8",
-                "C:\\C_C++\\chapter1\\main.c",
-                "C:\\C_C++\\chapter1\\stack.c",
+                "C:\\C_C-\\chapter1\\main.c",
+                "C:\\C_C-\\chapter1\\stack.c",
                 "-o",
-                "C:\\C_C++\\chapter1\\main.exe"
+                "C:\\C_C-\\chapter1\\main.exe"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
