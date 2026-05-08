@@ -15,15 +15,23 @@ int main() {
     data = DeQueue(); PrintQueue("DeQueue()");
     printf("\tDeQueue data = %d\n", data);
     data = DeQueue(); PrintQueue("DeQueue()");
-    printf("\tDeQueue data = %d\n", data);
+    printf("\top data = %d\n", data);
     EnQueue(40); PrintQueue("EnQueue(40)");
     data = DeQueue(); PrintQueue("DeQueue()");
-    printf("\tDeQueue data = %d\n", data);
+    printf("\top data = %d\n", data);
 
-    //PrintQueue("현재 큐");
+    PrintQueue("현재 큐");
 
-    //data = DeQueue();
-    //printf("DeQueue: %d\n", data);
+    data = DeQueue();
+    printf("DeQueue: %d\n", data);
+
+    PrintQueue("DeQueue 후 큐");
+
+    PrintQueue("DeQueue 후 큐");
+
+    PrintQueue("DeQueue 후 큐");
+
+    PrintQueue("DeQueue 후 큐");
 
     return 0;
 }
