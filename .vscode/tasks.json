@@ -2,10 +2,10 @@
     "version": "2.0.0",
     "tasks": [
         {
-           // "label": "build all",
-           // "type": "shell",
-            "type": "cppbuild",
-            "label": "C/C++: gcc.exe build active file",
+            //"type": "cppbuild",
+            //"label": "C/C++: gcc.exe build active file",
+            "label": "build all",
+            "type": "shell",
             "command": "C:/msys64/mingw64/bin/gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
@@ -26,8 +26,8 @@
             }
         },
         {
-            "label": "build all",
-            "type": "shell",
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe build active file",
             "command": "C:/msys64/mingw64/bin/gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
