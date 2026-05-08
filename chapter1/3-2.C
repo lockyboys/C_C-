@@ -50,7 +50,7 @@ void Infix2Postfix(char infix[100], char postfix[100]) {
                 postfix[idxPost++] = ch;
             }
         }
-        else if (symbol >= 0 && symbol <= 9) {
+        else if (symbol >= '0' && symbol <= '9') {
             postfix[idxPost++] = symbol;
         }
         else {
@@ -77,7 +77,7 @@ void main() {
     SetConsoleOutputCP(65001);
     element data;
 
-    char infix[100] = "5*(6-2)-7*3+4";
+    char infix[100] = "9*(8-7)-6*5+4";
     char postfix[100];
 
     printf("중위표기식 : %s\n", infix);

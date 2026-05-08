@@ -47,7 +47,7 @@ void Infix2Postfix(char infix[100], char postfix[100]) {
                 postfix[idxPost++] = ch;
             }
         }
-        else if (symbol >= 0 && symbol <= 9) {
+        else if (symbol >= '0' && symbol <= '9') {
             postfix[idxPost++] = symbol;
         }
         else {
