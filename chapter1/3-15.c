@@ -321,7 +321,7 @@ void PrintAll(ACCOUNT *accounts, int cntAccount) {
     for (int i = 0; i < cntAccount; i++) {
         printf("%8d %10s %10d\n",
             accounts[i].id,
-            accounts[i].name,
+            accounts[i].name, 
             accounts[i].balance);
     }
     printf("-----------------------------\n");

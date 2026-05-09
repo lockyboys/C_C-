@@ -1,5 +1,5 @@
 /*
-    구조체 배열
+    구조체 배열 
 */
 #include <stdio.h>
 #include <string.h>

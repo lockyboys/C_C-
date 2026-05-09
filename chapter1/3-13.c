@@ -1,5 +1,5 @@
 /*
-    구조체
+    구조체 
 */
 #include <stdio.h>
 #include <string.h>
