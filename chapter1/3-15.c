@@ -365,18 +365,23 @@ void InOut(ACCOUNT* accounts, int count, int bin){
     Sleep(3000);
 }
 
-static char s_filename[] = "accountM1angment.dat";
+static char s_filename[] = "accountMangment.dat";
 
 void Save(ACCOUNT* accounts, int count){
+
     FILE* fp = fopen(s_filename, "wb");
+
     if (fp == NULL) {
-        printf("%S 파일을 열 수 없습니다\n", s_filename);
+        printf("%s 파일을 열 수 없습니다\n", s_filename);
         return;
     }
+
     fwrite(&count, sizeof(int), 1, fp);
-    for ( int i = 0; i < count; i++) {
-        fwrite(accounts, sizeof(ACCOUNT), 1, fp);
+
+    for (int i = 0; i < count; i++) {
+        fwrite(&accounts[i], sizeof(ACCOUNT), 1, fp);
     }
+
     fclose(fp);
 }
 void Load(ACCOUNT* accounts, int* pCount){
@@ -403,7 +408,45 @@ void Read2ndInfo(){
     fread(&account, sizeof(ACCOUNT), 1, fp);
     printf("2nd:  %8d %8s %8d\n",
         account.id, account.name, account.balance);
+    fseek(fp, sizeof(int)+sizeof(ACCOUNT)*2, SEEK_SET);
+    fread(&account, sizeof(ACCOUNT), 1, fp);
+    printf("2nd:  %8d %8s %8d\n",
+        account.id, account.name, account.balance);
     fclose(fp);
+}
+/* 계좌 삭제 */
+void DeleteAccount(ACCOUNT* accounts, int* pCount) {
+
+    int id;
+    int find = -1;
+
+    printf("삭제할 계좌번호 : ");
+    scanf("%d", &id);
+
+    // 계좌 찾기
+    for (int i = 0; i < *pCount; i++) {
+
+        if (accounts[i].id == id) {
+            find = i;
+            break;
+        }
+    }
+
+    if (find == -1) {
+        printf("계좌가 존재하지 않습니다.\n");
+        Sleep(3000);
+        return;
+    }
+
+    // 뒤 데이터를 앞으로 한칸 이동
+    for (int i = find; i < *pCount - 1; i++) {
+        accounts[i] = accounts[i + 1];
+    }
+
+    (*pCount)--;
+
+    printf("계좌 삭제 완료.\n");
+    Sleep(3000);
 }
 int main(void) {
     SetConsoleOutputCP(65001);
@@ -416,7 +459,7 @@ int main(void) {
 
         PrintAll(accounts, cntAccount);
 
-        printf("\n계좌개설(1) 입금(2) 출금(3) 종료(0)\n");
+        printf("\n계좌개설(1) 입금(2) 출금(3) 삭제(4) 종료(0)\n");
         printf("선택 : ");
 
        if (scanf("%d", &menu) != 1) {
@@ -470,6 +513,10 @@ int main(void) {
         /* 출금 */
         else if (menu == 3) {
             InOut(accounts, cntAccount, 0);
+        }
+        /* 삭제 */
+        else if (menu == 4) {
+            DeleteAccount(accounts, &cntAccount);
         }
 
         /* 종료 */
